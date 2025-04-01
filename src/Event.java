@@ -43,6 +43,7 @@ public class Event {
     public void setPrice(int price) {
         this.price = price;
     }
+
     public Event(String name, int price) {
         this.name = name;
         this.price = price;
@@ -62,7 +63,7 @@ public class Event {
 
     }
     public String eventInfo(Event event){
-        return "Name: " + event.getName() + ", Date: " + event.getDate() + ", Price: " + event.getPrice();
+        return "Name: " + event.getName() + ", Date: " + event.getDate() + ", Price: " + event.getPrice() + ", Location: " + event.getLocation();
     }
     public void reserve1Seat(){
         System.out.println();

@@ -4,7 +4,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    private ArrayList<Event> reservationList = new ArrayList<>();
+    private ArrayList<Event> customerReservationList = new ArrayList<>();
 
     // getters and setters
     public String getFirstName() {
@@ -26,7 +26,7 @@ public class Customer {
         this.email = email;
     }
     public ArrayList<Event> getReservationList() {
-        return reservationList;
+        return customerReservationList;
     }
 
     // first time user
@@ -43,15 +43,24 @@ public class Customer {
     public void addToReservationList(Event event) {
         System.out.println();
         System.out.println("Adding to Reservation List");
-        reservationList.add(event);
+        customerReservationList.add(event);
         event.reserve1Seat();
         System.out.println("Reservation has been added to the list");
         System.out.println("Added event: ");
         System.out.println(event.eventInfo(event));
         System.out.println();
     }
+    public void displayReservationList() {
+        System.out.println();
+        System.out.println("Displaying Reservation List");
+        for (Event event : customerReservationList) {
+            System.out.println(event.eventInfo(event));
+            System.out.println();
+        }
+        System.out.println();
+    }
     public void removeFromReservationList(Event event) {
-        reservationList.remove(event);
+        customerReservationList.remove(event);
         event.unreserve1Seat();
         System.out.println("Reservation has been removed from the list");
         System.out.println("Removed event: ");
